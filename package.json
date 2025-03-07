@@ -1,0 +1,21 @@
+{
+  "name": "ai-flashcards-api",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "drizzle-kit": "^0.30.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "^0.4.3",
+    "@libsql/client": "^0.14.0",
+    "better-auth": "^1.2.3",
+    "drizzle-orm": "^0.40.0",
+    "groq-sdk": "^0.15.0",
+    "hono": "^4.7.4"
+  }
+}
