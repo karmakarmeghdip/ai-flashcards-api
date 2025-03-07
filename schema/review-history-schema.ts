@@ -15,10 +15,11 @@ CREATE TABLE review_history (
 
 import { sql } from "drizzle-orm";
 import { check, integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { userFlashcardProgress } from "./user-flashcard-schema";
 
 export const reviewHistory = sqliteTable('review_history', {
   id: text('id').primaryKey(),
-  user_flashcard_progress_id: text('user_flashcard_progress_id').notNull(),
+  user_flashcard_progress_id: text('user_flashcard_progress_id').notNull().references(() => userFlashcardProgress.id, { onDelete: "cascade" }),
   timestamp: text('timestamp').default(sql`CURRENT_TIMESTAMP`),
   performance: text('performance').notNull(),
   time_taken: integer('time_taken').notNull(),
